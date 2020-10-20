@@ -8,5 +8,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="spigot-1.16.3" level="project" />
+    <orderEntry type="library" name="Multiverse-Core-4.2.2" level="project" />
+    <orderEntry type="library" name="EssentialsX-2.18.1.0" level="project" />
+    <orderEntry type="library" name="VoidGenerator-1.6.2" level="project" />
   </component>
 </module>
