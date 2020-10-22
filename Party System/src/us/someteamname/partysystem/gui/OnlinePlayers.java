@@ -1,10 +1,8 @@
 package us.someteamname.partysystem.gui;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.TimeZone;
+import java.util.*;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -48,9 +46,9 @@ public OnlinePlayers(Manager manager) {
     } 
     if (e.getCurrentItem().getType().equals(Material.PLAYER_HEAD)) {
       Manager manager = PartyUp.getMenuView(p);
-      manager.setPlayerEdit((String)e.getCurrentItem().getItemMeta().getPersistentDataContainer()
-          .get(new NamespacedKey((Plugin)PartyUp.get(), "uuid"), PersistentDataType.STRING));
-      if (manager.getPlayerEdit().equals(p.getName())) {
+      manager.setPlayerUUID(UUID.fromString(e.getCurrentItem().getItemMeta().getPersistentDataContainer()
+              .get(new NamespacedKey((Plugin)PartyUp.get(), "uuid"), PersistentDataType.STRING)));
+      if (manager.getPlayerUUID().equals(p.getName())) {
         p.closeInventory();
         this.api.msg(p, this.api.prefix + "&c&oYou cannot befriend yourself... Nice try though");
         p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_HURT, 8.0F, 1.0F);
@@ -112,7 +110,7 @@ public OnlinePlayers(Manager manager) {
           } 
           playerMeta.setLore(Arrays.asList(new String[] { color("&a&l&oFirst joined: &r" + firstPlayed), color("&a&l&oLast on: &r" + lastPlayed) }));
           playerMeta.getPersistentDataContainer().set(new NamespacedKey((Plugin)PartyUp.get(), "uuid"), PersistentDataType.STRING, ((Player)players
-              .get(this.index)).getName());
+              .get(this.index)).getUniqueId().toString());
           playerItem.setItemMeta(playerMeta);
           this.inventory.addItem(new ItemStack[] { playerItem });
         } 

@@ -42,7 +42,7 @@ public class PartyFinderOptions extends Menu {
     } 
     if (mat == Material.DIRT) {
       p.closeInventory();
-      this.api.joinParty(p, Bukkit.getPlayer(this.manager.getPlayerEdit()));
+      this.api.joinParty(p, Bukkit.getPlayer(this.manager.getPlayerUUID()));
       p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_HURT, 8.0F, 1.0F);
     } 
   }
