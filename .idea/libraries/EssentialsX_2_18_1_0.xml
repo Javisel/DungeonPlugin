@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="EssentialsX-2.18.1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Dependencies/EssentialsX-2.18.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Dependencies/EssentialsXAntiBuild-2.18.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Dependencies/EssentialsXChat-2.18.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Dependencies/EssentialsXGeoIP-2.18.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Dependencies/EssentialsXProtect-2.18.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Dependencies/EssentialsXSpawn-2.18.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Dependencies/EssentialsXXMPP-2.18.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

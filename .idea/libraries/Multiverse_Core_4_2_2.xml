@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Multiverse-Core-4.2.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Dependencies/Multiverse-Core-4.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Dependencies/Multiverse-NetherPortals-4.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Dependencies/Multiverse-Portals-4.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
