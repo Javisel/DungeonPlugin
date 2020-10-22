@@ -1,5 +1,6 @@
 package us.someteamname.partysystem.gui.friend;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -47,7 +48,7 @@ public class FriendIncoming extends Menu {
   }
   
   public void setMenuItems() {
-    ItemStack add = makeItem(Material.EMERALD, color("&a&l&oAdd &r" + this.manager.getPlayerUUID() + " &aas a friend."), new String[] { "" });
+    ItemStack add = makeItem(Material.EMERALD, color("&a&l&oAdd &r" + Bukkit.getPlayer(this.manager.getPlayerUUID()).getDisplayName() + " &aas a friend."), new String[] { "" });
     ItemStack back = makeItem(Material.DARK_OAK_BUTTON, color("&a&oGo back."), new String[] { "" });
     this.inventory.setItem(3, add);
     this.inventory.setItem(8, back);

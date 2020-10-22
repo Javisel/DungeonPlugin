@@ -812,7 +812,14 @@ public class FriendAPI {
 
 	public void doFriendAction(FriendAction action, Player p, UUID target) {
 		// TODO Auto-generated method stub
-		
+
+		switch (action) {
+
+			case BEFRIEND:{
+
+			}
+		}
+
 	}
 
 	public String getMailingAction(MailingAction action) {

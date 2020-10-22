@@ -24,7 +24,7 @@ public class FriendInvite extends Menu{
   }
   
   public String getMenuName() {
-    return color("&5&oAdd " + this.manager.getPlayerUUID() + " as a friend!");
+    return color("&5&oAdd " + Bukkit.getPlayer(this.manager.getPlayerUUID()).getDisplayName() + " as a friend!");
   }
   
   public int getSlots() {
@@ -54,7 +54,7 @@ public class FriendInvite extends Menu{
   }
   
   public void setMenuItems() {
-    ItemStack add = makeItem(Material.EMERALD, color("&a&l&oAdd &r" + this.manager.getPlayerUUID() + " &aas a friend."), new String[] { "" });
+    ItemStack add = makeItem(Material.EMERALD, color("&a&l&oAdd &r" + Bukkit.getPlayer(this.manager.getPlayerUUID()).getDisplayName() + " &aas a friend."), new String[] { "" });
     ItemStack back = makeItem(Material.DARK_OAK_BUTTON, color("&a&oGo back."), new String[] { "" });
     this.inventory.setItem(3, add);
     this.inventory.setItem(8, back);

@@ -110,7 +110,7 @@ public OnlinePlayers(Manager manager) {
           } 
           playerMeta.setLore(Arrays.asList(new String[] { color("&a&l&oFirst joined: &r" + firstPlayed), color("&a&l&oLast on: &r" + lastPlayed) }));
           playerMeta.getPersistentDataContainer().set(new NamespacedKey((Plugin)PartyUp.get(), "uuid"), PersistentDataType.STRING, ((Player)players
-              .get(this.index)).getName());
+              .get(this.index)).getUniqueId().toString());
           playerItem.setItemMeta(playerMeta);
           this.inventory.addItem(new ItemStack[] { playerItem });
         } 
