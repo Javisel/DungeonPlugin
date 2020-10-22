@@ -13,7 +13,7 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import us.someteamname.partysystem.Friend;
+import us.someteamname.partysystem.FriendAPI;
 
 public abstract class Menu implements InventoryHolder {
   protected Manager manager;
@@ -24,7 +24,7 @@ public abstract class Menu implements InventoryHolder {
     return ChatColor.translateAlternateColorCodes('&', msg);
   }
   
-  protected Friend api = new Friend();
+  protected FriendAPI api = new FriendAPI();
   
   protected ItemStack FILLER_GLASS = makeItem(Material.BLACK_STAINED_GLASS_PANE, " ", new String[0]);
   

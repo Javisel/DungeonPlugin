@@ -1,6 +1,7 @@
 package us.someteamname.partysystem.gui.friend;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -39,8 +40,8 @@ public class FriendOutgoingList extends MenuPaginated {
     Material mat = e.getCurrentItem().getType();
     if (mat.equals(Material.END_CRYSTAL)) {
       Manager manager = PartyUp.getMenuView(p);
-      manager.setPlayerEdit((String)e.getCurrentItem().getItemMeta().getPersistentDataContainer()
-          .get(new NamespacedKey((Plugin)PartyUp.get(), "uuid"), PersistentDataType.STRING));
+      manager.setPlayerUUID(UUID.fromString((String)e.getCurrentItem().getItemMeta().getPersistentDataContainer()
+          .get(new NamespacedKey((Plugin)PartyUp.get(), "uuid"), PersistentDataType.STRING)));
       (new FriendOutgoing(manager)).open();
     } else if (mat.equals(Material.BARRIER)) {
       p.closeInventory();

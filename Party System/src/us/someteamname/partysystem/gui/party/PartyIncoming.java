@@ -25,7 +25,7 @@ public class PartyIncoming extends Menu {
   }
   
   public String getMenuName() {
-    return this.manager.getPlayerEdit() + "'s Party";
+    return this.manager.getPlayerUUID() + "'s Party";
   }
   
   public int getSlots() {
@@ -44,7 +44,7 @@ public class PartyIncoming extends Menu {
     } 
     if (mat == Material.DIRT) {
       p.closeInventory();
-      this.api.joinParty(p, Bukkit.getPlayer(this.manager.getPlayerEdit()));
+      this.api.joinParty(p, Bukkit.getPlayer(this.manager.getPlayerUUID()));
       p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_HURT, 8.0F, 1.0F);
       return;
     } 

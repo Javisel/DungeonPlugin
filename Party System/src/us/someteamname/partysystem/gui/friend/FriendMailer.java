@@ -20,7 +20,7 @@ public FriendMailer(Manager manager) {
   }
   
   public String getMenuName() {
-    return color(this.api.prefix + "&e&oSend mail to &a" + this.manager.getPlayerEdit());
+    return color(this.api.prefix + "&e&oSend mail to &a" + this.manager.getPlayerUUID());
   }
   
   public int getSlots() {
@@ -32,43 +32,43 @@ public FriendMailer(Manager manager) {
     Material mat = e.getCurrentItem().getType();
     if (mat == Material.BLACK_DYE) {
       p.closeInventory();
-      this.api.sendMail(MailingAction.ONE, p, this.manager.getPlayerEdit());
+      this.api.sendMail(MailingAction.ONE, p, this.manager.getPlayerUUID());
     } 
     if (mat == Material.BLUE_DYE) {
       p.closeInventory();
-      this.api.sendMail(MailingAction.TWO, p, this.manager.getPlayerEdit());
+      this.api.sendMail(MailingAction.TWO, p, this.manager.getPlayerUUID());
     } 
     if (mat == Material.BROWN_DYE) {
       p.closeInventory();
-      this.api.sendMail(MailingAction.THREE, p, this.manager.getPlayerEdit());
+      this.api.sendMail(MailingAction.THREE, p, this.manager.getPlayerUUID());
     } 
     if (mat == Material.CYAN_DYE) {
       p.closeInventory();
-      this.api.sendMail(MailingAction.FOUR, p, this.manager.getPlayerEdit());
+      this.api.sendMail(MailingAction.FOUR, p, this.manager.getPlayerUUID());
     } 
     if (mat == Material.GRAY_DYE) {
       p.closeInventory();
-      this.api.sendMail(MailingAction.FIVE, p, this.manager.getPlayerEdit());
+      this.api.sendMail(MailingAction.FIVE, p, this.manager.getPlayerUUID());
     } 
     if (mat == Material.GREEN_DYE) {
       p.closeInventory();
-      this.api.sendMail(MailingAction.SIX, p, this.manager.getPlayerEdit());
+      this.api.sendMail(MailingAction.SIX, p, this.manager.getPlayerUUID());
     } 
     if (mat == Material.LIGHT_BLUE_DYE) {
       p.closeInventory();
-      this.api.sendMail(MailingAction.SEVEN, p, this.manager.getPlayerEdit());
+      this.api.sendMail(MailingAction.SEVEN, p, this.manager.getPlayerUUID());
     } 
     if (mat == Material.LIGHT_GRAY_DYE) {
       p.closeInventory();
-      this.api.sendMail(MailingAction.EIGHT, p, this.manager.getPlayerEdit());
+      this.api.sendMail(MailingAction.EIGHT, p, this.manager.getPlayerUUID());
     } 
     if (mat == Material.LIME_DYE) {
       p.closeInventory();
-      this.api.sendMail(MailingAction.NINE, p, this.manager.getPlayerEdit());
+      this.api.sendMail(MailingAction.NINE, p, this.manager.getPlayerUUID());
     } 
     if (mat == Material.MAGENTA_DYE) {
       p.closeInventory();
-      this.api.sendMail(MailingAction.TEN, p, this.manager.getPlayerEdit());
+      this.api.sendMail(MailingAction.TEN, p, this.manager.getPlayerUUID());
     } 
   }
   

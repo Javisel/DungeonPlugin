@@ -1,10 +1,8 @@
 package us.someteamname.partysystem.gui.party;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.TimeZone;
+import java.util.*;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -51,9 +49,9 @@ public class PartyFinder extends MenuPaginated {
     } 
     if (e.getCurrentItem().getType().equals(Material.PLAYER_HEAD)) {
       Manager manager = PartyUp.getMenuView(p);
-      manager.setPlayerEdit((String)e.getCurrentItem().getItemMeta().getPersistentDataContainer()
-          .get(new NamespacedKey((Plugin)PartyUp.get(), "uuid"), PersistentDataType.STRING));
-      if (manager.getPlayerEdit().equals(p.getName())) {
+      manager.setPlayerUUID(UUID.fromString((String)e.getCurrentItem().getItemMeta().getPersistentDataContainer()
+          .get(new NamespacedKey((Plugin)PartyUp.get(), "uuid"), PersistentDataType.STRING)));
+      if (manager.getPlayerUUID().equals(p.getName())) {
         p.closeInventory();
         this.api.msg(p, this.api.prefix + "&c&oYou cannot join yourself... Nice try though");
         p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_HURT, 8.0F, 1.0F);

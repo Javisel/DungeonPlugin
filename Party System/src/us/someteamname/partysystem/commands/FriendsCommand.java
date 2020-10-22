@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.entity.Player;
 
-import us.someteamname.partysystem.Friend;
+import us.someteamname.partysystem.FriendAPI;
 import us.someteamname.partysystem.PartyUp;
 import us.someteamname.partysystem.gui.Manager;
 import us.someteamname.partysystem.gui.friend.FriendList;
@@ -24,7 +24,7 @@ public class FriendsCommand extends BukkitCommand {
   }
   
   public boolean execute(CommandSender sender, String commandLabel, String[] args) {
-    Friend api = new Friend();
+    FriendAPI api = new FriendAPI();
     if (!(sender instanceof Player)) {
       sendMessage(sender, api.prefix + " This is a player only command.");
       return true;

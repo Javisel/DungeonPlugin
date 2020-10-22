@@ -20,7 +20,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.plugin.Plugin;
 
-import us.someteamname.partysystem.Friend;
+import us.someteamname.partysystem.FriendAPI;
 import us.someteamname.partysystem.PartyUp;
 import us.someteamname.partysystem.gui.Manager;
 import us.someteamname.partysystem.gui.Menu;
@@ -42,7 +42,7 @@ public class Players implements Listener {
 	  @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
 	  public void onQuit(PlayerQuitEvent e) {
 	    Player p = e.getPlayer();
-	    Friend api = new Friend();
+	    FriendAPI api = new FriendAPI();
 	    Config data = new Config(p.getUniqueId().toString());
 	    if (api.isInParty(data, p)) {
 	      api.leaveParty(p);
@@ -65,12 +65,12 @@ public class Players implements Listener {
 	    if (e.getRightClicked() instanceof Player) {
 	      Player p = e.getPlayer();
 	      Player clicked = (Player)e.getRightClicked();
-	      Friend api = new Friend();
+	      FriendAPI api = new FriendAPI();
 	      for (Material mat : getSwords()) {
 	        if (p.getInventory().getItemInMainHand().getType().equals(mat)) {
 	          p.sendMessage(color(api.prefix + "You sent a party invite to &e&o" + clicked.getName()));
 	          Manager view = PartyUp.getMenuView(clicked);
-	          view.setPlayerEdit(p.getName());
+	          view.setPlayerUUID(p.getUniqueId());
 	          (new PartyIncoming(view)).open();
 	          break;
 	        } 
@@ -81,7 +81,7 @@ public class Players implements Listener {
 	  @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
 	  public void onPlayerChat(AsyncPlayerChatEvent e) {
 	    Player p = e.getPlayer();
-	    Friend api = new Friend();
+	    FriendAPI api = new FriendAPI();
 	    if (api.inPartyChat(p)) {
 	      e.setCancelled(true);
 	      for (String members : api.PartyMembers(api.getParty(p))) {
@@ -106,7 +106,7 @@ public class Players implements Listener {
 	  
 	  @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
 	  public void onPlayerHurtPlayer(EntityDamageByEntityEvent event) {
-	    Friend api = new Friend();
+	    FriendAPI api = new FriendAPI();
 	    if (event.getDamager() instanceof Player && event.getEntity() instanceof Player) {
 	      Player p = (Player)event.getDamager();
 	      Player target = (Player)event.getEntity();

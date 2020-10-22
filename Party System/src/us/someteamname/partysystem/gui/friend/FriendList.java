@@ -2,6 +2,7 @@ package us.someteamname.partysystem.gui.friend;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -47,8 +48,8 @@ public FriendList(Manager manager) {
     Material mat = e.getCurrentItem().getType();
     if (mat.equals(Material.END_CRYSTAL)) {
       Manager manager = PartyUp.getMenuView(p);
-      manager.setPlayerEdit((String)e.getCurrentItem().getItemMeta().getPersistentDataContainer()
-          .get(new NamespacedKey((Plugin)PartyUp.get(), "uuid"), PersistentDataType.STRING));
+      manager.setPlayerUUID(UUID.fromString(e.getCurrentItem().getItemMeta().getPersistentDataContainer()
+          .get(new NamespacedKey((Plugin)PartyUp.get(), "uuid"), PersistentDataType.STRING)));
       (new FriendOptions(manager)).open();
       p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_AMBIENT, 8.0F, 1.0F);
     } else if (mat.equals(Material.BARRIER)) {
