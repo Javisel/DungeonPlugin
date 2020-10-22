@@ -1,10 +1,8 @@
 package us.someteamname.partysystem.gui.party;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.TimeZone;
+import java.util.*;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -49,19 +47,22 @@ public class PartyInviter extends MenuPaginated {
     } 
     if (e.getCurrentItem().getType().equals(Material.PLAYER_HEAD)) {
       Manager manager = PartyUp.getMenuView(p);
-      manager.setPlayerEdit((String)e.getCurrentItem().getItemMeta().getPersistentDataContainer()
-          .get(new NamespacedKey((Plugin)PartyUp.get(), "uuid"), PersistentDataType.STRING));
-      if (manager.getPlayerEdit().equals(p.getName())) {
+      manager.setPlayerUUID(UUID.fromString(e.getCurrentItem().getItemMeta().getPersistentDataContainer()
+              .get(new NamespacedKey((Plugin)PartyUp.get(), "uuid"), PersistentDataType.STRING)));
+
+
+      if (manager.getPlayerUUID().equals(p.getName())) {
         p.closeInventory();
         this.api.msg(p, this.api.prefix + "&c&oYou cannot invite yourself... Nice try though");
         p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_HURT, 8.0F, 1.0F);
         return;
       } 
       p.closeInventory();
-      p.sendMessage(color(this.api.prefix + "&a&oYou have invited " + manager.getPlayerEdit() + " to your party."));
+      p.sendMessage(color(this.api.prefix + "&a&oYou have invited " + manager.getPlayerUUID() + " to your party."));
       Manager view = PartyUp.getMenuView(Bukkit.getPlayer((String)e.getCurrentItem().getItemMeta().getPersistentDataContainer()
             .get(new NamespacedKey((Plugin)PartyUp.get(), "uuid"), PersistentDataType.STRING)));
-      view.setPlayerEdit(p.getName());
+      view.setPlayerUUID(p.getUniqueId());
+
       (new PartyIncoming(view)).open();
     } else if (e.getCurrentItem().getType().equals(Material.BARRIER)) {
       p.closeInventory();

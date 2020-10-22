@@ -3,7 +3,7 @@ package us.someteamname.partysystem.commands;
 import java.util.ArrayList;
 import java.util.Arrays;
 import net.md_5.bungee.api.ChatColor;
-import us.someteamname.partysystem.Friend;
+import us.someteamname.partysystem.FriendAPI;
 import us.someteamname.partysystem.PartyUp;
 import us.someteamname.partysystem.gui.Manager;
 import us.someteamname.partysystem.gui.party.PartyMenu;
@@ -27,7 +27,7 @@ public class PartyCommand extends BukkitCommand {
   }
   
   public boolean execute(CommandSender sender, String commandLabel, String[] args) {
-    Friend api = new Friend();
+    FriendAPI api = new FriendAPI();
     if (!(sender instanceof Player)) {
       sendMessage(sender, api.prefix + " This is a player only command.");
       return true;

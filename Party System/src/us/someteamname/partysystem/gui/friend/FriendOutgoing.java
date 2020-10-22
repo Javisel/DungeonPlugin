@@ -23,7 +23,7 @@ public class FriendOutgoing extends Menu {
   }
   
   public String getMenuName() {
-    return color("&5&oCancel your request to " + this.manager.getPlayerEdit() + " ?");
+    return color("&5&oCancel your request to " + this.manager.getPlayerUUID() + " ?");
   }
   
   public int getSlots() {
@@ -34,7 +34,7 @@ public class FriendOutgoing extends Menu {
     Player p = (Player)e.getWhoClicked();
     Material mat = e.getCurrentItem().getType();
     if (mat == Material.EMERALD) {
-      this.api.perform(FriendAction.CANCEL_REQUEST, p, this.manager.getPlayerEdit());
+      this.api.doFriendAction(FriendAction.CANCEL_REQUEST, p, this.manager.getPlayerUUID());
       p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_NO, 8.0F, 1.0F);
       p.closeInventory();
     } 

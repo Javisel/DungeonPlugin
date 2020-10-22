@@ -2,13 +2,13 @@ package us.someteamname.partysystem.util;
 
 import org.bukkit.entity.Player;
 
-import us.someteamname.partysystem.Friend;
+import us.someteamname.partysystem.FriendAPI;
 import us.someteamname.partysystem.PartyUp;
 
 public class API {
 	public PartyUp plugin;
 
-	 public Friend api = new Friend();
+	 public FriendAPI api = new FriendAPI();
 	  
 	  public void Placeholders(PartyUp plugin) {
 	    this.plugin = plugin;

@@ -4,7 +4,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import us.someteamname.partysystem.Friend;
+import us.someteamname.partysystem.FriendAPI;
 
 public class Announcer extends BukkitRunnable {
 Player p;
@@ -14,7 +14,7 @@ Player p;
 	}
 	
 	  public void run() {
-    Friend api = new Friend();
+    FriendAPI api = new FriendAPI();
     if (api.getRequests(this.p).size() > 0) {
       this.p.sendMessage(ChatColor.translateAlternateColorCodes('&', api.prefix + "&e&oYou have &f&l" + api.getRequests(this.p).size() + " &e&onew friend requests!\nUse &7/friend&e&o to respond to them."));
       return;

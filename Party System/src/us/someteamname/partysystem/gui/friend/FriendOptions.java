@@ -43,12 +43,12 @@ public class FriendOptions extends Menu {
     } 
     if (mat == Material.BOOKSHELF) {
       Manager view = PartyUp.getMenuView(p);
-      view.setPlayerEdit(this.manager.getPlayerEdit());
+      view.setPlayerUUID(this.manager.getPlayerUUID());
       (new FriendMailer(view)).open();
     } 
     if (mat == Material.DIRT) {
       p.closeInventory();
-      this.api.perform(FriendAction.UNFRIEND, p, this.manager.getPlayerEdit());
+      this.api.doFriendAction(FriendAction.UNFRIEND, p, this.manager.getPlayerUUID());
       p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_HURT, 8.0F, 1.0F);
     } 
   }

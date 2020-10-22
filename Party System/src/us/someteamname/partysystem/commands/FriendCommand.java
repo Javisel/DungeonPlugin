@@ -1,13 +1,15 @@
 package us.someteamname.partysystem.commands;
 
 import java.util.Arrays;
+import java.util.UUID;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.entity.Player;
 
-import us.someteamname.partysystem.Friend;
+import us.someteamname.partysystem.FriendAPI;
 import us.someteamname.partysystem.PartyUp;
 import us.someteamname.partysystem.gui.Manager;
 import us.someteamname.partysystem.gui.friend.FriendList;
@@ -26,7 +28,7 @@ public FriendCommand() {
   }
   
   public boolean execute(CommandSender sender, String commandLabel, String[] args) {
-    Friend api = new Friend();
+    FriendAPI api = new FriendAPI();
     if (!(sender instanceof Player)) {
       sendMessage(sender, api.prefix + " This is a player only command.");
       return true;
@@ -46,12 +48,15 @@ public FriendCommand() {
         (new FriendList(manager)).open();
       } 
       return true;
-    } 
+    }
+
+    UUID targetid = Bukkit.getPlayer(args[1]).getUniqueId();
+
     if (length == 2) {
       if (args[0].equalsIgnoreCase("add"))
-        api.perform(FriendAction.BEFRIEND, p, args[1]); 
+        api.doFriendAction(FriendAction.BEFRIEND, p, targetid);
       if (args[0].equalsIgnoreCase("remove"))
-        api.perform(FriendAction.UNFRIEND, p, args[1]); 
+        api.doFriendAction(FriendAction.UNFRIEND, p, targetid);
       return true;
     } 
     Manager view = PartyUp.getMenuView(p);

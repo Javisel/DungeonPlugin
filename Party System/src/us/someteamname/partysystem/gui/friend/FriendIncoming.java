@@ -23,7 +23,7 @@ public class FriendIncoming extends Menu {
   }
   
   public String getMenuName() {
-    return color("&5&oAdd " + this.manager.getPlayerEdit() + " as a friend!");
+    return color("&5&oAdd " + this.manager.getPlayerUUID() + " as a friend!");
   }
   
   public int getSlots() {
@@ -34,7 +34,7 @@ public class FriendIncoming extends Menu {
     Player p = (Player)e.getWhoClicked();
     Material mat = e.getCurrentItem().getType();
     if (mat == Material.EMERALD) {
-      this.api.perform(FriendAction.BEFRIEND, p, this.manager.getPlayerEdit());
+      this.api.doFriendAction(FriendAction.BEFRIEND, p, this.manager.getPlayerUUID());
       p.closeInventory();
       p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_AMBIENT, 8.0F, 1.0F);
     } 
@@ -47,7 +47,7 @@ public class FriendIncoming extends Menu {
   }
   
   public void setMenuItems() {
-    ItemStack add = makeItem(Material.EMERALD, color("&a&l&oAdd &r" + this.manager.getPlayerEdit() + " &aas a friend."), new String[] { "" });
+    ItemStack add = makeItem(Material.EMERALD, color("&a&l&oAdd &r" + this.manager.getPlayerUUID() + " &aas a friend."), new String[] { "" });
     ItemStack back = makeItem(Material.DARK_OAK_BUTTON, color("&a&oGo back."), new String[] { "" });
     this.inventory.setItem(3, add);
     this.inventory.setItem(8, back);
