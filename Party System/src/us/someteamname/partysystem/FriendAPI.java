@@ -48,7 +48,7 @@ public class FriendAPI {
 	  public String ninethMsg = "Check your chests";
 	  
 	  public String tenthMsg = "Where did you go? Ill be back";
-	  
+
 	  public void msg(Player p, String msg) {
 	    p.sendMessage(ChatColor.translateAlternateColorCodes('&', msg));
 	  }
