@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Custom Enchants/src"/>
+	<classpathentry kind="src" path="MOTDTablist-FINAL/src"/>
+	<classpathentry kind="src" path="Party System/src"/>
+	<classpathentry kind="src" path="Player JoinQuit Disabler Message-FINAL/src"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Matth/Desktop/spigot-1.16.3.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_111"/>
+	<classpathentry kind="output" path="MOTDTablist-FINAL/bin"/>
+</classpath>
