@@ -1,6 +1,0 @@
-name: PartySystem
-version: 1.0
-api-version: 1.16
-author: TestBench01
-description: A lightweight and easy way to ally other players!
-main: us.someteamname.partysystem.PartyUp
