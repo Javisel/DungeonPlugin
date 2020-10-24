@@ -11,6 +11,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import us.someteamname.CustomEnchantments.Core;
 import us.someteamname.CustomEnchantments.Eloc;
+import us.someteamname.CustomEnchantments.Enchant;
 import us.someteamname.CustomEnchantments.Util;
 
 import java.util.ArrayList;
