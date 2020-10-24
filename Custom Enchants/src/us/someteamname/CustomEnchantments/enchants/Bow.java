@@ -28,7 +28,8 @@ public class Bow implements Listener {
 
     public static ArrayList<Arrow> arrowinair = new ArrayList<>();
 
-    @EventHandler
+    @SuppressWarnings("deprecation")
+	@EventHandler
     public void Aimbot(EntityShootBowEvent e) {
         if (e.getEntity() instanceof Mob) {
             final Player player = (Player)e.getEntity();
@@ -48,7 +49,7 @@ public class Bow implements Listener {
                             }
                         }
                     }
-                } 20L, 20L);
+                }, 20L, 20L);
             }
         }
     }

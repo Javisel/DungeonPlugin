@@ -1,21 +1,9 @@
 package us.someteamname.CustomEnchantments;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.lang.invoke.ConstantCallSite;
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.MethodHandles;
-import java.lang.invoke.MethodType;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.net.URL;
-import java.net.URLConnection;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Base64;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.DyeColor;
@@ -35,7 +23,7 @@ public class Core extends JavaPlugin implements Listener {
 
     public static Plugin pl;
 
-    public static String prefix = ChatColor.BLUE.BOLD + "CustomEnchants >>";
+    public static String prefix = "";
 
     File languageYML;
 

@@ -26,7 +26,7 @@ public class Shields implements Listener {
                     max = 15;
                 }
                 if (player.isBlocking() && Util.randInt(1, max) == 1) {
-                    damager.damage(double max);
+                    damager.damage(max);
                 }
             }
         }
